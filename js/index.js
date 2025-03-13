@@ -1,63 +1,74 @@
-// 1. Створити змінну з іменем age і присвоїти їй значення свого віку. Вивести значення цієї змінної в консоль.
+// 1. Створити змінні celsius, fahrenheit для зберігання температури за Цельсієм та Фаренгейтом. Перевести температуру з Цельсія у Фаренгейти за допомогою формули та вивести результат в консоль.
+let celsius = 56;
+let fahrenheit = (celsius * 9/5) + 32;
 
-let age = 14;
-console.log(age);
+console.log(fahrenheit)
 
-// 2. Створити змінну з іменем name і присвоїти їй значення свого імені. Вивести значення цієї змінної в консоль.
+// 2. Створити змінну daysInMonth для зберігання кількості днів у місяці. Обчислити кількість hoursInMonth годин та minutesInMonth хвилин у цьому місяці за допомогою оператора множення та вивести результат в консоль.
 
-const userName = 'Andrii';
-console.log(userName);
+let daysInMonth = 30;
+let hoursInMonth = daysInMonth*24;
+let minutesInMonth = hoursInMonth*60;
 
-// 3. Створити змінну з іменем isStudent і присвоїти їй значення true або false, залежно від того, чи є студентом. Вивести значення цієї змінної в консоль.
+console.log("Днів в місяці: ", daysInMonth)
+console.log("Годин в місяці: ", hoursInMonth)
+console.log("Хвилин в місяці: ", minutesInMonth)
 
-let isStudent = true;
-console.log(isStudent)
+// 3. Створити змінні health, energy для зберігання рівня здоров'я та енергії гравця в грі. Зменшити рівень здоров'я та енергії гравця за допомогою операторів віднімання та вивести результат в консоль.
 
-// 4. Створити змінну з іменем myString і присвоїти їй рядок з вашої улюбленою цитатою. Вивести цей рядок в консоль.
+let health = 20;
+let energy = 10;
 
-let myString = 'Їде venom через venom, бачить venom в річці venom, сунув venom руку в venom, venom venom venom venom';
-console.log(myString);
+health = health - 10;
+energy = energy - 5;
 
-// 5. Створити змінну з іменем myNumber і присвоїти їй довільне числове значення. Потім присвоїти цій змінній результат додавання до неї числа 10. Вивести значення myNumber в консоль.
+console.log("Здоров'я: ", health)
+console.log("Енергія: ", energy)
 
-let myNumber = 74308;
-myNumber = myNumber + 10;
-console.log(myNumber)
+// 4. Створити змінну totalPrice для зберігання суми покупки в магазині. Застосувати знижку discount в розмірі 10% до цієї суми за допомогою оператора множення. Результат зберегти в змінній discountedPrice та вивести результат в консоль.
 
-// 6. Створити змінну з іменем myNull і присвоїти їй значення null. Вивести значення цієї змінної в консоль.
+let totalPrice = 500;
+const discount = 0.9;
 
-let myNull = null;
-console.log(myNull)
+let discountedPrice = totalPrice*discount;
 
-// 7. Створити скрипт який виводить спливаюче вікно з запитом на введення імені користувача за допомогою prompt(). Після введення імені вивести повідомлення привітання з використанням введеного імені.
+console.log(discountedPrice)
 
-function namePrompt() {
-    let customName = prompt('Hello what is your name?');
-    console.log(customName)
-    confirm('Hello ' + customName + ' have a nice day!');
-}
+// 5. Створити змінну const floatNumber = 12.78 для зберігання числа з плаваючою комою. Використати метод Math.floor() для округлення числа до меншого. Результат зберегти в змінній roundedDown та вивести результат в консоль.
 
-// 8. Створити скрипт який виводить спливаюче підтвердження за допомогою confirm(). Якщо користувач підтверджує дію, вивести повідомлення "Дякую за підтвердження!". Якщо користувач відмовляється, вивести повідомлення "Дію відмінено!".
+const floatNumber = 12.78;
+let roundedDown = Math.floor(floatNumber)
 
-function Confirm() {
-    let isConfirm = confirm('Ви впевнені що хочете продовжити?')
-    if (isConfirm === true) {
-        alert('Дякуємо за підтвердження!');
-    }
-    else {
-        alert('Дію відмінено');
-    }
-}
+console.log(roundedDown)
 
-// 9. Створити скрипт який виводить спливаюче попередження за допомогою alert(). Вивести повідомлення про те, що дія небезпечна та попросити користувача підтвердити дію за допомогою confirm(). Якщо користувач підтверджує дію, вивести повідомлення "Дякую за підтвердження!". Якщо користувач відмовляється, вивести повідомлення "Дію відмінено!".
+// 6. Створити змінну const floatString = "45.67"  для зберігання рядка, який містить числа з плаваючою комою. Використати метод parseFloat() для перетворення рядка у десяткове число. Результат зберегти в змінній parsedFloat та вивести результат в консоль.
 
-function AlertConfirm() {
-    alert('Ця дія не безпечна!')
-    let isAlertConfirm = confirm('Ви впевнені що хочете продовжити?')
-    if (isAlertConfirm === true) {
-        alert('Дякуємо за підтвердження!');
-    }
-    else {
-        alert('Дію відмінено');
-    }
-}
+const floatString = "45.67";
+let parsedFloat = parseFloat(floatString)
+
+console.log(parsedFloat, typeof parsedFloat)
+
+// 7. Створити змінну const intString = "123" для зберігання рядка, який містить ціле число. Використати метод parseInt() для перетворення рядка у ціле число. Результат зберегти в змінній parsedIntта вивести результат в консоль.
+
+const intString = "123";
+let parsedInt = parseInt(intString);
+
+console.log(parsedInt);
+
+// 8. Створити змінну number для зберігання числа. Використати метод Math.sqrt() для обчислення квадратного кореня числа. Результат зберегти в змінній sqrtNumber та вивести результат в консоль.
+
+let number = 42;
+let sqrtNumber = Math.sqrt(number);
+
+console.log(sqrtNumber);
+
+// 9. Створити змінні const integer = 42 та const stringNumber = "256" для зберігання цілочисельного значення та рядка з числом у вигляді рядка. Використати метод parseInt() для перетворення рядка у ціле число. Результат зберегти в змінній convertedInt та вивести результат в консоль. Потім використати метод toString() для перетворення цілочисельного значення у рядок. Результат зберегти в змінній convertedString та вивести результат в консоль.
+
+const integer = 42;
+const stringNumber = "256";
+
+let convertedInt = parseInt(stringNumber);
+let convertedString = integer.toString();
+
+console.log(convertedInt, typeof convertedInt);
+console.log(convertedString, typeof convertedString);
