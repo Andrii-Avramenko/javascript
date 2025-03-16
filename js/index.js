@@ -1,74 +1,25 @@
-// 1. Створити змінні celsius, fahrenheit для зберігання температури за Цельсієм та Фаренгейтом. Перевести температуру з Цельсія у Фаренгейти за допомогою формули та вивести результат в консоль.
-let celsius = 56;
-let fahrenheit = (celsius * 9/5) + 32;
+// 1. Вивести result в консоль. Перевірити тип змінної result= 5+5+’5’.
+let result = 5 + 5 + '5';
+console.log(result, typeof result);
 
-console.log(fahrenheit)
+// 2. Створіть змінну email з вашою електронною адресою. Напишіть скрипт, який перевіряє чи містить змінна email символ @ і рахує загальну кількість символів. Результат виведіть в консоль.
+const email = 'andreitvmm228@gmail.com';
+console.log(email.includes('@'), email.length);
 
-// 2. Створити змінну daysInMonth для зберігання кількості днів у місяці. Обчислити кількість hoursInMonth годин та minutesInMonth хвилин у цьому місяці за допомогою оператора множення та вивести результат в консоль.
+// 3. Записати в окремих змінних кожне слово: My, name, is. Поєднати всі слова в змінну fullName. До змінної fullName додати ‘Viktor’. fullName вивести в консоль.
+const partOne = 'My';
+const partTwo = ' name';
+const partThree = ' is';
 
-let daysInMonth = 30;
-let hoursInMonth = daysInMonth*24;
-let minutesInMonth = hoursInMonth*60;
+let fullName = partOne + partTwo + partThree;
+fullName += ' Viktor';
 
-console.log("Днів в місяці: ", daysInMonth)
-console.log("Годин в місяці: ", hoursInMonth)
-console.log("Хвилин в місяці: ", minutesInMonth)
+console.log(fullName);
 
-// 3. Створити змінні health, energy для зберігання рівня здоров'я та енергії гравця в грі. Зменшити рівень здоров'я та енергії гравця за допомогою операторів віднімання та вивести результат в консоль.
+// 4. Створіть змінну userName з ім’ям користувача і змінну payment з сумою до оплати. За допомогою шаблонного рядка виведіть на екран через alert повідомлення на прикладі цього: «Дякуємо, Олександро! До сплати 300 гривень»
+function task34() {
+    const userName = 'Олег';
+    let payment = 69000
 
-let health = 20;
-let energy = 10;
-
-health = health - 10;
-energy = energy - 5;
-
-console.log("Здоров'я: ", health)
-console.log("Енергія: ", energy)
-
-// 4. Створити змінну totalPrice для зберігання суми покупки в магазині. Застосувати знижку discount в розмірі 10% до цієї суми за допомогою оператора множення. Результат зберегти в змінній discountedPrice та вивести результат в консоль.
-
-let totalPrice = 500;
-const discount = 0.9;
-
-let discountedPrice = totalPrice*discount;
-
-console.log(discountedPrice)
-
-// 5. Створити змінну const floatNumber = 12.78 для зберігання числа з плаваючою комою. Використати метод Math.floor() для округлення числа до меншого. Результат зберегти в змінній roundedDown та вивести результат в консоль.
-
-const floatNumber = 12.78;
-let roundedDown = Math.floor(floatNumber)
-
-console.log(roundedDown)
-
-// 6. Створити змінну const floatString = "45.67"  для зберігання рядка, який містить числа з плаваючою комою. Використати метод parseFloat() для перетворення рядка у десяткове число. Результат зберегти в змінній parsedFloat та вивести результат в консоль.
-
-const floatString = "45.67";
-let parsedFloat = parseFloat(floatString)
-
-console.log(parsedFloat, typeof parsedFloat)
-
-// 7. Створити змінну const intString = "123" для зберігання рядка, який містить ціле число. Використати метод parseInt() для перетворення рядка у ціле число. Результат зберегти в змінній parsedIntта вивести результат в консоль.
-
-const intString = "123";
-let parsedInt = parseInt(intString);
-
-console.log(parsedInt);
-
-// 8. Створити змінну number для зберігання числа. Використати метод Math.sqrt() для обчислення квадратного кореня числа. Результат зберегти в змінній sqrtNumber та вивести результат в консоль.
-
-let number = 42;
-let sqrtNumber = Math.sqrt(number);
-
-console.log(sqrtNumber);
-
-// 9. Створити змінні const integer = 42 та const stringNumber = "256" для зберігання цілочисельного значення та рядка з числом у вигляді рядка. Використати метод parseInt() для перетворення рядка у ціле число. Результат зберегти в змінній convertedInt та вивести результат в консоль. Потім використати метод toString() для перетворення цілочисельного значення у рядок. Результат зберегти в змінній convertedString та вивести результат в консоль.
-
-const integer = 42;
-const stringNumber = "256";
-
-let convertedInt = parseInt(stringNumber);
-let convertedString = integer.toString();
-
-console.log(convertedInt, typeof convertedInt);
-console.log(convertedString, typeof convertedString);
+    alert(`Дякуємо, ${userName}! До сплати ${payment} гривень`)
+}
