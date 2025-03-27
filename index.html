@@ -11,25 +11,30 @@
             color: #fff;
         }
 
+        button {
+            background-color: #00f;
+            border-radius: 50px;
+            border: 0;
+            padding: 15px;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #0000bf;
+            color: #bfbfbf;
+        }
+
         .calculator {
             display: flex;
-            max-width: 500px;
+            max-width: 650px;
             padding: 50px;
+            gap: 10px;
             align-items: center;
             justify-content: space-between;
             border: 5px solid #fff;
             border-radius: 10px;
             color: #fff;
-        }
-
-        .calc-equal {
-            background-color: #00f;
-            border-radius: 5px;
-        }
-
-        .calc-equal:hover {
-            background-color: #00f;
-            color: #000;
         }
     </style>
 </head>
@@ -49,6 +54,8 @@
         <button type="button" onclick="calculator()" class="calc-equal">Equals</button>
     </form>
     <h2>Result is: <span id="result-span"></span></h2>
+    <br>
+    <button type="button" onclick="switchExp()">Приклад використовування switch</button>
 
     <script src="./js/index.js"></script>
     <script src="./js/script.js"></script>

@@ -23,5 +23,7 @@ function calculator() {
     } else if (divide.checked) {
         let result = value1 / value2;
         doc.getElementById("result-span").innerHTML = result
-    }
+    } else {
+        doc.getElementById("result-span").innerHTML = "щось не так"
+    };
 }
