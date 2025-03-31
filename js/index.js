@@ -2,7 +2,7 @@
 const stringName = "Anna";
 let stringPass = "1234";
 
-if (Boolean(stringName.length) == true && Boolean(stringPass.length) == true) {
+if (stringName.length == true && stringPass.length == true) {
     console.log("Обидва поля заповнені");
 } else {
     console.log("Не всі поля заповнені");
@@ -44,7 +44,7 @@ let userName = "sigmaboy"
 const userEmail = "sigmaboy2@bombom.venom"
 let userPass = "123456"
 
-if (userName.length >= 3 && userEmail.includes("@" && ".") && userPass.length >= 6) {
+if (userName.length >= 3 && userEmail.includes("@") && userEmail.lastIndexOf(".") >  userEmail.indexOf("@") + 1 && userPass.length >= 6) {
     console.log("Перенаправлення на іншу сторінку")
 } else {
     console.log("Помилка: неправильне заповнення")
