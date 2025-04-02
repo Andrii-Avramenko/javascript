@@ -13,6 +13,7 @@ let firstNumber = 4;
 let secondNumber = 6;
 let totalNumber = firstNumber + secondNumber;
 
+
 if (totalNumber > 10) {
     console.log("Сума більша за 10");
 } else if (totalNumber <= 10) {
@@ -22,22 +23,18 @@ if (totalNumber > 10) {
 };
 
 // 3. Створіть змінну для зберігання тексту. Перевірте, чи містить цей текст слово "JavaScript". Якщо містить, виведіть "Текст містить слово JavaScript", якщо ні — "Текст не містить слово JavaScript".
-isthereText = "I LOOOVEEEE JavaScript";
-
-if (isthereText.includes("JavaScript")) {
-    console.log("Текст містить слово JavaScript")
-} else {
-    console.log("Текст не містить слово JavaScript")
-};
+let isthereText = "I LOOOVEEEE JavaScript";
+// Тернарний оператор
+let isthereResult = isthereText.includes("JavaScript") ? "Текст містить слово JavaScript" : "Текст не містить слово JavaScript";
+console.log(isthereResult)
 
 // 4. Створіть змінну для зберігання числа. Перевірте, чи це число більше 10 і менше 20. Якщо так — виведіть "Число входить в діапазон від 10 до 20", якщо ні — "Число не входить в діапазон від 10 до 20".
 const theNumber = 13;
-
-if (theNumber >= 10 && theNumber <= 20) {
-    console.log("Число входить в діапазон від 10 до 20")
-} else {
-    console.log("Число не входить в діапазон від 10 до 20")
-};
+// Змінна перевіряє чи число входить в діапазон від 10 до 20 (Якщо так = true якщо ні false)
+let numberRange = theNumber >= 10 && theNumber <= 20;
+// Тернарний оператор
+const numberResult = numberRange == true ? "Число входить в діапазон від 10 до 20" : "Число не входить в діапазон від 10 до 20"; 
+console.log(numberResult);
 
 // 5. Створіть змінні для зберігання значень полів (ім'я, email, пароль). Перевірте, чи ім'я містить не менше 3 символів, чи email містить символ @ та крапку після нього, а пароль не менше 6 символів. Якщо всі умови виконані — виведіть "Перенаправлення на іншу сторінку", якщо ні — "Помилка: неправильне заповнення".
 let userName = "sigmaboy"
