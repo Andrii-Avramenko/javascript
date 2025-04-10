@@ -1,9 +1,9 @@
 // 1. Вивести в консоль всі числа від 1 до 10 за допомогою циклу while.
-let numberWhile = 0
+let counter = 0
 
-while (numberWhile !== 10) {
-    numberWhile += 1
-    console.log(numberWhile)
+while (counter <= 10) {
+    console.log("Лічильник: " + counter)
+    counter += 1
 };
 
 // 2. Вивести в консоль всі парні числа від 2 до 20 за допомогою циклу for. Якщо число парне, пропустити його за допомогою continue.
@@ -32,7 +32,7 @@ while (true) {
 }
 
 // 5. За допомогою циклу while вивести в консоль всі числа від 1 до 20, крім чисел, кратних 3. Якщо зустрінете число, кратне 3, цикл повинен продовжити виконання за допомогою оператора continue.
-let multipleNumber = 0;
+let multipleNumber = 1;
 
 while (multipleNumber <= 20) {
     if (multipleNumber % 3 === 0) {
