@@ -1,8 +1,14 @@
 // 1. Напиши скрипт, який об'єднує всі елементи массива в один рядок. Елементів може бути довільна кількість. Нехай елементи массива в рядку будут розділені комою.
 const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+let string = "";
 
-let string = friends.join(', ');
-console.log(string);
+for (let i = 0; i <+ friends.length; i += 1) {
+    string += friends[i] + ", "
+}
+console.log('Резултат циклу for:', string)
+
+string = friends.join(', ');
+console.log('Резултат методу join():', string);
 // 2. Працюємо з колекцією карток в trello. Метод splice() (можна використати інші методи)
 const cards = [
     'Карточка-1',
