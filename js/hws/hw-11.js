@@ -4,16 +4,16 @@ let bankAccount = {
     accountNumber: 1234,
     balance: 250,
 
-    deposit: function () {
+    deposit() {
         const amount = Number(prompt('Скільки грошей ви плануєте додати?'))
         const confirmation = confirm(`Ви впевнені що хочете додати ${amount}`)
-        bankAccount.balance = confirmation == true ? bankAccount.balance + amount : bankAccount.balance;
+        this.balance = confirmation == true ? this.balance + amount : this.balance;
     },
 
-    withdraw: function () {
+    withdraw() {
         const amount = Number(prompt('Скільки грошей ви плануєте зняти?'))
         const confirmation = confirm(`Ви впевнені що хочете зняти ${amount}`)
-        bankAccount.balance = confirmation == true ? bankAccount.balance - amount : bankAccount.balance;
+        this.balance = confirmation == true ? this.balance - amount : this.balance;
     }
 };
 
@@ -23,14 +23,15 @@ let bankAccount = {
 // console.log(bankAccount.balance)
 
 // 2. Створіть об'єкт "weather" з властивостями "temperature", "humidity", "windSpeed". Додайте до об'єкту метод, який повертає "true", якщо температура нижче 0 градусів Цельсія, та "false", якщо температура вище або рівна 0 градусів Цельсія. Температуру потрібно отримати з prompt(). Якщо метод повернув "true" вивести повідомлення “температура нижче 0 градусів Цельсія” і навпаки
-let weather = {
+const inputTemp = Number(prompt("Яка температура за вікном?"));
+
+const weather = {
     temperature: 12,
     humidity: 0,
     windSpeed: 0,
 
-    isCold: function () {
-        this.temperature = Number(prompt("Яка температура за вікном?"));
-        if (this.temperature < 0) {
+    isCold(temperature) {
+        if (temperature < 0) {
             alert("Температура нижче 0 градусів Цельсія");
             return true;
         } else {
@@ -40,14 +41,14 @@ let weather = {
     }
 }
 
-// weather.isCold()
+// weather.isCold(inputTemp)
 
 // 3. Створіть об’єкт "user", який буде мати властивості "name", "email", "password". Додайте метод "login", який буде перевіряти правильність введеного email та password. 
 const user = {
     name: 'David',
     email: 'davidovdavid13',
     password: 'dAvId13',
-    login: function(inputEmail, inputPass) {
+    login(inputEmail, inputPass) {
         if (inputEmail === this.email && inputPass === this.password) {
             console.log('Вхід успішний!')
         } else {
@@ -65,7 +66,7 @@ const movie = {
     director: 'Jared Hess',
     year: 2025,
     rating: 6,
-    mustWatch: function() {
+    mustWatch() {
         if (this.rating > 8) {
             return true;
         } else if (this.rating <= 8) {

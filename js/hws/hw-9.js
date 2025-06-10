@@ -1,5 +1,5 @@
 // 1
-const logItems = function(array) {
+const logItems = function (array) {
     for (const element of array) {
         console.log(array.indexOf(element) + 1, '-', element)
     }
@@ -9,7 +9,7 @@ let brainrot = ['Tralalelo Tralala', 'Cappucina balerina', 'Bombombini gusini']
 
 logItems(brainrot);
 // 2
-const calculateEngravingPrice = function(message, pricePerWord) {
+const calculateEngravingPrice = function (message, pricePerWord) {
     const words = message.split(/\s/);
     const result = words.length * pricePerWord
     return result;
@@ -17,7 +17,7 @@ const calculateEngravingPrice = function(message, pricePerWord) {
 
 console.log(calculateEngravingPrice('I love javascript', 19))
 // 3
-const findLongestWord = function(string) {
+const findLongestWord = function (string) {
     const words = string.split(/\s/);
     let longestWord = "";
     for (const word of words) {
@@ -29,7 +29,7 @@ const findLongestWord = function(string) {
 
 console.log(findLongestWord('Lorem ipsum dolor sit amet, consectetur adipiscing elit.'))
 // 4 
-const formatString = function(string) {
+const formatString = function (string) {
     if (string.length > 41) {
         const result = string.substring(0, 41) + '...';
         return result;
@@ -43,36 +43,39 @@ console.log(formatString('Lorem ipsum dolor sit amet.'))
 
 
 // 5
-const checkForSpam = function(message) {
+const checkForSpam = function (message) {
     if (message.includes('spam') || message.includes('sale')) {
         return true;
-    } 
+    }
     return false;
-} 
+}
 
 console.log(checkForSpam('Bottle of coke is for sale -50% off'))
 // 6
-let total = 0 
+let input;
+const numbers = [];
+let total = 0;
 
-const addNumber = function() {
-    let numbers = []
+const addNumber = function () {
     while (true) {
-        let input = prompt('Введіть число нижче');
+        input = prompt('Введіть число нижче');
         if (input === null) {
-            for (const num of numbers) {
-                total += num;
-            }
-            console.log(total)
-            break
-        } else {
-            let number = Number(input)
-
-            if (!isNaN(number)) {
-                numbers.push(number)
-            } else {
-                alert('Було введено не число, попробуйте ще раз')
-            }
+            break;
         }
+        const number = Number(input);
+        if (!isNaN(number)) {
+            numbers.push(number);
+        } else {
+            alert('Було введено не число, попробуйте ще раз');
+        }
+    }
+    if (numbers.length > 0) {
+        for (const num of numbers) {
+            total += num;
+        }
+        console.log(`Загальна сума чисел дорівнює ${total}`);
+    } else {
+        console.log("Масив порожній. Немає що рахувати.");
     }
 }
 
@@ -80,14 +83,14 @@ addNumber()
 // 7
 let logins = ['MegaBrain'];
 
-const isLoginValid = function(login) {
+const isLoginValid = function (login) {
     if (login.length < 17 && login.length > 3) {
         console.log('Логін підходить по параметрам')
         return true
-    } 
+    }
     console.log('Логін не підходить по параметрам')
     return false
-    
+
 }
 
 const isLoginUnique = function (allLogins, login) {
@@ -99,7 +102,7 @@ const isLoginUnique = function (allLogins, login) {
     return true
 }
 
-const addLogin = function(allLogins, login) {
+const addLogin = function (allLogins, login) {
     if (isLoginValid(login) == true && isLoginUnique(allLogins, login) == true) {
         allLogins.splice(0, 0, login)
         return 'Авторизація пройдена успіншно';
