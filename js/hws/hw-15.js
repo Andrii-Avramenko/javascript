@@ -87,42 +87,22 @@ const users = [
 ];
 
 // 1. Отримати загальну суму балансу (поле balance) всіх користувачів.
-const calculateTotalBalance = users => {
-    total = 0;
-    for (let i = 0; i < users.length; i += 1) {
-        total += users[i].balance
-    }
-    return total
-};
+const calculateTotalBalance = users => users.reduce((total, user) => total + user.balance, 0);
 
-console.log(calculateTotalBalance(users)); // 20916
+console.log(calculateTotalBalance(users));
 
 // 2. Масив імен всіх користувачів у яких є друг із зазначеним ім'ям.
-const getUsersWithFriend = (users, friendName) => {
-    result = []
-    for (let i = 0; i < users.length; i += 1) {
-        if (users[i].friends.includes(friendName) === true) {
-            result.push(users[i].name)
-        }
-    }
-    return result
-};
+const getUsersWithFriend = (users, friendName) => users.filter(user => user.friends.includes(friendName)).map(user => user.name);
 
-console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
-console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+console.log(getUsersWithFriend(users, 'Briana Decker'));
+console.log(getUsersWithFriend(users, 'Goldie Gentry'));
 
 // 3. Масив імен (поле name) людей, відсортованих в залежності від кількості їх друзів (поле friends)
-const getNamesSortedByFriendsCount = users => {
-    return users.slice().sort((a, b) => a.friends.length - b.friends.length).map(({name}) => name);
-};
+const getNamesSortedByFriendsCount = users => [...users].sort((a, b) => a.friends.length - b.friends.length).map(({name}) => name);;
 
 console.log(getNamesSortedByFriendsCount(users));
-// [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
 
 // 4. Отримати масив всіх умінь всіх користувачів (поле skills), при цьому не має бути повторюваних умінь і вони повинні бути відсортовані в алфавітному порядку.
-const getSortedUniqueSkills = users => {
-    return users.flatMap(user => user.skills).filter((skill, index, arr) => arr.indexOf(skill) === index).sort()
-};
+const getSortedUniqueSkills = users => [...new Set(users.flatMap(user => user.skills))].sort();
 
 console.log(getSortedUniqueSkills(users));
-// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
