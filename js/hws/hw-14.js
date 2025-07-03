@@ -87,6 +87,7 @@ const users = [
 ];
 
 // 1. Отримати масив імен всіх користувачів (поле name).
+console.log("Завдання 1")
 const getUserNames = users => {
     result = []
     for (let i = 0; i < users.length; i += 1) {
@@ -98,52 +99,26 @@ const getUserNames = users => {
 console.log(getUserNames(users));
 
 // 2. Отримати масив об'єктів користувачів за кольором очей (поле eyeColor).
-const getUsersWithEyeColor = (users, color) => {
-    result = []
-    for (let i = 0; i < users.length; i += 1) {
-        if (users[i].eyeColor === color) {
-            result.push(users[i].name)
-        }
-    }
-    return result
-};
+console.log("Завдання 2")
+const getUsersWithEyeColor = (users, color) => users.filter(user => user.eyeColor === color);
 
 console.log(getUsersWithEyeColor(users, 'blue')); // [об'єкт Moore Hensley, об'єкт Sharlene Bush, об'єкт Carey Barr]
 
 // 3. Отримати масив імен користувачів за статтю (поле gender)
-const getUsersWithGender = (users, gender) => {
-    result = []
-    for (let i = 0; i < users.length; i += 1) {
-        if (users[i].gender === gender) {
-            result.push(users[i].name)
-        }
-    }
-    return result
-};
+console.log("Завдання 3")
+const getUsersWithGender = (users, gender) => users.filter(user => user.gender === gender).map(user => user.name);
 
 console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
 // 4. Отримати масив тільки неактивних користувачів (поле isActive).
-const getInactiveUsers = users => {
-    result = []
-    for (let i = 0; i < users.length; i += 1) {
-        if (users[i].isActive === false) {
-            result.push(users[i].name)
-        }
-    }
-    return result
-};
+console.log("Завдання 4")
+const getInactiveUsers = users => users.filter(user => user.isActive == false);
 
 console.log(getInactiveUsers(users)); // [об'єкт Moore Hensley, об'єкт Ross Vazquez, об'єкт Blackburn Dotson] ]
 
 // 5. Отримати користувача (не масив) по email (поле email, він унікальний).
-const getUserWithEmail = (users, email) => {
-    for (let i = 0; i < users.length; i += 1) {
-        if (users[i].email === email) {
-            return users[i].name
-        }
-    }
-};
+console.log("Завдання 5")
+const getUserWithEmail = (users, email) => users.find(user => user.email === email)
 
 console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); // {об'єкт користувача Sheree Anthony}
 console.log(getUserWithEmail(users, 'elmahead@omatom.com')); // {об'єкт користувача Elma Head}
